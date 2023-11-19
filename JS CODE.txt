@@ -1,0 +1,72 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Form submission handling with animation
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Your form submission logic here
+        // For example, you can send the form data to a server using fetch()
+
+        // Add a classy success message with fadeIn and fadeOut animation
+        const successMessage = document.createElement('div');
+        successMessage.classList.add('success-message');
+        successMessage.textContent = 'Form submitted successfully!';
+        document.body.appendChild(successMessage);
+
+        setTimeout(() => {
+            successMessage.style.opacity = '0';
+        }, 3000);
+
+        setTimeout(() => {
+            successMessage.remove();
+        }, 3500);
+    });
+
+    // Hero section entrance and hover animation
+    const heroSection = document.querySelector('.hero');
+    heroSection.style.opacity = '0';
+    heroSection.style.transform = 'translateY(20px)';
+    heroSection.style.transition = 'background-color 0.5s';
+
+    heroSection.addEventListener('mouseover', () => {
+        heroSection.style.backgroundColor = '#0056b3'; // Change the color on hover
+    });
+
+    heroSection.addEventListener('mouseout', () => {
+        heroSection.style.backgroundColor = '#007bff'; // Change back to the original color
+    });
+
+    setTimeout(() => {
+        heroSection.style.transition = 'opacity 1s, transform 1s, background-color 0.5s';
+        heroSection.style.opacity = '1';
+        heroSection.style.transform = 'translateY(0)';
+    }, 500);
+
+    // Feature buttons hover animation
+    const featureButtons = document.querySelectorAll('.feature-button');
+
+    featureButtons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.backgroundColor = '#f8f8f8'; // Change the color on hover
+            button.style.color = '#333'; // Change text color on hover
+        });
+
+        button.addEventListener('mouseout', () => {
+            button.style.backgroundColor = '#007bff'; // Change back to the original color
+            button.style.color = '#fff'; // Change back to the original text color
+        });
+    });
+
+    // Add any additional features here...
+});

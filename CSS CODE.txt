@@ -1,0 +1,118 @@
+:root {
+    --main-bg-color: #f5f5f5; /* Set your desired background color */
+    --nav-bg-color: #333;
+    --nav-text-color: #fff;
+    --hero-bg-color: #007bff;
+    --hero-text-color: #fff;
+    --cta-bg-color: #fff;
+    --cta-text-color: #007bff;
+    --feature-bg-color: #f8f8f8;
+    --feature-hover-color: #e2e2e2; /* Added hover color for features */
+    --feature-gradient: linear-gradient(to right, #ffafbd, #ffc3a0); /* Gradient for features tabs */
+    --contact-bg-gradient: linear-gradient(to bottom, #e6f7ff, #007bff); /* Gradient for contact section */
+    --footer-bg-color: #333;
+    --footer-text-color: #fff;
+}
+
+/* Reset styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+}
+
+/* Navigation styles */
+nav {
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+}
+
+/* Hero section styles */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: var(--hero-bg-color);
+    color: var(--hero-text-color);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cta-bg-color);
+    color: var(--cta-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Features section styles */
+.features {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.feature-card {
+    background-color: var(--feature-bg-color);
+    background: var(--feature-gradient); /* Added gradient for features tabs */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease; /* Added transition for smooth hover effect */
+}
+
+.feature-card:hover {
+    background: var(--feature-hover-color); /* Added hover color for features */
+}
+
+/* Contact section styles */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--contact-bg-gradient); /* Added gradient for contact section */
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 10px;
+}
